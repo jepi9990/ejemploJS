@@ -3,8 +3,10 @@ const log = require('morgan');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
+
 const indexRoutes = require('./routes/index.js');
-const { Mongoose } = require('mongoose');
+
 
 
 // escuchar al servidor
