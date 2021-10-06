@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de plataforma</title>
+    <title>plataforma de IOT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Bienvenido <%= nombre %>  </h1>
-    <p>Plataforma con express y javascript</p>
+    <nav class = "navbar navbar-dark bg-dark">
+        <a href="/"class="navbar-brand">IOT</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class= card-body>
+                <form action="/add">
+                    <div class="form-group">
+                         <input type="text" name="temperatura" placeholder="Temperatura °C" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="humedad" placeholder="Humedad" class="form-control">
+                   </div>
+                   <button class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+        <h1>Hola </h1>
+        <div class="col-5"></div>
+        <p>parrafo</p>
+
+    </div>
 </body>
 </html>
