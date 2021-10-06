@@ -16,8 +16,8 @@ app.set('views',path.join(__dirname,'views'));
 //se configura el motor de vistas
 app.set('view engine','ejs');
 // conexion a la base de datos
-Mongoose.connect('mongodb+srv://jepi9990:Cancer9990@cluster0.ladli.mongodb.net/Cluster0?retryWrites=true&w=majority')
-.then(bd => console.log('bd se conecto')).catch(err => console.log(err));
+mongoose.connect('mongodb+srv://jepi9990:Cancer9990@cluster0.ladli.mongodb.net/Cluster0?retryWrites=true&w=majority')
+.then(bd => console.log('BD se conecto')).catch(err => console.log(err));
 
 //middleware
 app.use(log('dev'));
