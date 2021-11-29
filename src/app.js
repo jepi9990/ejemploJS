@@ -5,20 +5,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const indexRoutes = require('./routes/index.js');
-
-
+const indexRoutes = require('./routes/index.js');   
 
 // escuchar al servidor
 app.set('port',process.env.PORT || 3000);
-
-//se apuntan a las vistas
 app.set('views',path.join(__dirname,'views'));
-
-//se configura el motor de vistas
 app.set('view engine','ejs');
 // conexion a la base de datos
-mongoose.connect('mongodb+srv://jepi9990:Vwb3qD4Zrw7C7Zhm@cluster0.ladli.mongodb.net/iot?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://jepi9990:gY2GVTGq1Lv4Jun7@cluster0.ladli.mongodb.net/iot?retryWrites=true&w=majority')
 .then(bd => console.log('BD se conecto')).catch(err => console.log(err));
 
 //middleware

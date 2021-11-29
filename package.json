@@ -4,8 +4,8 @@
   "description": "servicio web en javascript",
   "main": "app.js",
   "scripts": {
-   "dev":"nodemon src/app.js",
-   "start":"node src/app.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
