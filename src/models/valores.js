@@ -7,4 +7,4 @@ const Valor = new Schema({
     fecha: Date 
     
 });
-    module.exports = mongoose.model('valores', Valor); 
+module.exports = mongoose.model('valores', Valor); 

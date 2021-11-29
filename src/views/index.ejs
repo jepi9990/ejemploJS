@@ -8,38 +8,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 </head>
 <body>
-    <nav class = "navbar navbar-dark bg-dark">
-        <a href="/" method= "POST" class="navbar-brand">IOT</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="navbar-brand">IOT</a>
     </nav>
+    
     <div class="container">
-        <div class="card">
-            <div class= card-body>
-                <form action="/add">
+        <div class="col-md-5">
+           <div class="card">
+               <div class="card-body">
+                   <form action="/add" method="POST">
                     <div class="form-group">
-                         <input type="text" name="temperatura" placeholder="Temperatura °C" class="form-control">
+                        <input type="text" name="temperatura" placeholder="Temperatura °C" class="form-control">
                     </div>
                     <div class="form-group">
                         <input type="text" name="humedad" placeholder="Humedad" class="form-control">
-                   </div>
-                   <div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <input type="date" name="fecha" placeholder="Fecha" class="form-control">
                     </div>
-                   <button class="btn btn-primary">Registrar</button>
+                    <button class="btn btn-primary">Registrar</button>
                 </form>
-            </div>
+               </div>
+           </div>
         </div>
-    </div>
-    <div class="col-md-5">
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Temperatura</th>
-                    <th>Humedad</th>
-                    <th>Fecha</th>
-                </tr>
-            </thead>
-        </table>
+        <div class="col-md-5">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Temperatura</th>
+                        <th>Humedad</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < valores.length; i++){  %>
+                        <tr>
+                            <td><%= i+1  %></td>
+                            <td><%= valores[i].temperatura  %></td>
+                            <td><%= valores[i].humedad  %></td>
+                            <td><%= valores[i].fecha  %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
     </div>
 </body>
 </html>
