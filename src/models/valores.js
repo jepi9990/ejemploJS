@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const Valor = new Schema({
-    temperatura: String,
-    humedad: String,
-    fecha: Date 
-    
+    Desarrollador: String,
+    Entregas: String,
+    Distribuidora: String,
+    Plataforma: String
 });
-module.exports = mongoose.model('valores', Valor); 
+module.exports = mongoose.model('distribucion', Valor); 

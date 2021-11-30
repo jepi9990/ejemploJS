@@ -5,10 +5,10 @@ const models = require('../models/valores')();
 const Valor = require ('../models/valores');
 
 router.get('/', async (req, res) => {
-    const valores = await Valor.find();
-    console.log(valores);
+    const distribucion = await Valor.find();
+    console.log(distribucion);
     res.render('index.ejs',{
-        valores
+        distribucion
     });
 });
 
