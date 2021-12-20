@@ -18,6 +18,9 @@
                <div class="card-body">
                    <form action="/add" method="POST">
                     <div class="form-group">
+                        <input type="text" name="Id" placeholder="Id" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <input type="text" name="Desarrollador" placeholder="Desarrollador" class="form-control">
                     </div>
                     <div class="form-group">
@@ -39,24 +42,29 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Id</th>
                         <th>Desarrollador</th>
                         <th>Entregas</th>
                         <th>Distribuidora</th>
                         <th>Plataforma</th>
+                        <th>Opciones</th>
+                        <th>Actualizar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% for(var i = 0; i < distribucion.length; i++){  %>
                         <tr>
                             <td><%= i+1  %></td>
+                            <td><%= distribucion[i].id  %></td>
                             <td><%= distribucion[i].Desarrollador  %></td>
                             <td><%= distribucion[i].Entregas  %></td>
                             <td><%= distribucion[i].Distribuidora  %></td>
                             <td><%= distribucion[i].Plataforma  %></td>
+                            <td><a href='/del/<%= distribucion[i].id %>'>Eliminar</a></td>
+                            <td><a href='/up/<%= distribucion[i].id %>'>Actualizar</a></td>
                         </tr>
                     <% } %>
                 </tbody>
-
             </table>
         </div>
     </div>
