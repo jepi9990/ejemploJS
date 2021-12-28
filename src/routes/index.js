@@ -20,8 +20,8 @@ router.post('/add', async (req, res) => {
     const valor = new Valor(req.body);
     await valor.save();
     res.redirect('/');
-    res.json(valor);
 });
+
 
 router.get('/del/:id', async (req, res) => {
     console.log(req.params.id);
@@ -31,7 +31,7 @@ router.get('/del/:id', async (req, res) => {
     //res.status(200).json(reg);
 });
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/up/:id', async (req, res) => {
     try {
         const valor = await Valor.findById(req.params.id).lean()
         res.render('update.ejs', { valor });
@@ -40,7 +40,7 @@ router.get('/edit/:id', async (req, res) => {
     }
 });
 
-router.post('/edit/:id', async (req, res) => {
+router.post('/up/:id', async (req, res) => {
 
     const { id } = req.params;
     await Valor.findByIdAndUpdate(id, req.body);
