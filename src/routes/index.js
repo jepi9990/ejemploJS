@@ -31,7 +31,7 @@ router.get('/del/:id', async (req, res) => {
     //res.status(200).json(reg);
 });
 
-router.get('edit/:id', async (req, res) => {
+router.get('/edit/:id', async (req, res) => {
     try {
         const valor = await Valor.findById(req.params.id).lean()
         res.render('update.ejs', { valor });
@@ -47,6 +47,5 @@ router.post('/edit/:id', async (req, res) => {
     res.redirect('/');
 
 });
-
 
 module.exports = router;
