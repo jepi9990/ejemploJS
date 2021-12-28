@@ -20,6 +20,7 @@ router.post('/add', async (req, res) => {
     const valor = new Valor(req.body);
     await valor.save();
     res.redirect('/');
+    res.json(valor);
 });
 
 router.get('/del/:id', async (req, res) => {
@@ -30,7 +31,7 @@ router.get('/del/:id', async (req, res) => {
     //res.status(200).json(reg);
 });
 
-router.get('/edit/:id', async (req, res) => {
+router.get('edit/:id', async (req, res) => {
     try {
         const valor = await Valor.findById(req.params.id).lean()
         res.render('update.ejs', { valor });
