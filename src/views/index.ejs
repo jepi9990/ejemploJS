@@ -39,24 +39,28 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Id</th>
                         <th>Desarrollador</th>
                         <th>Entregas</th>
                         <th>Distribuidora</th>
                         <th>Plataforma</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% for(var i = 0; i < distribucion.length; i++){  %>
                         <tr>
                             <td><%= i+1  %></td>
+                            <td><%= distribucion[i].id  %></td>
                             <td><%= distribucion[i].Desarrollador  %></td>
                             <td><%= distribucion[i].Entregas  %></td>
                             <td><%= distribucion[i].Distribuidora  %></td>
                             <td><%= distribucion[i].Plataforma  %></td>
+                            <td><a href='/del/<%= distribucion[i].id %>'>Eliminar</a>
+                                <a href='/edit/<%= distribucion[i].id %>'>Actualizar</td>
                         </tr>
                     <% } %>
                 </tbody>
-
             </table>
         </div>
     </div>
